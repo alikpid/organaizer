@@ -1,17 +1,17 @@
 <?php
 
-use app\models\TaskStatus;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Contact;
 use yii\helpers\ArrayHelper;
 use yii\jui\DatePicker;
 
 /** @var yii\web\View $this */
-/** @var app\models\Task $model */
+/** @var app\models\Meeting $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="task-form">
+<div class="meeting-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -25,8 +25,8 @@ use yii\jui\DatePicker;
     // 'value' => date('yyyy-MM-dd', strtotime($model->date)),
 ]) ?>
 
-    <?= $form->field($model, 'id_status')->dropDownList(
-        ArrayHelper::map(TaskStatus::find()->all(), 'id', 'name')
+<?= $form->field($model, 'id_contact')->dropDownList(
+        ArrayHelper::map(Contact::find()->all(), 'id', 'fio')
     ) ?>
 
     <div class="form-group">
